@@ -1,51 +1,36 @@
 import streamlit as st
 
-# 멸종위기 동물 데이터 (사진 포함)
+# 멸종위기 동물 데이터 (이미지 URL 포함)
 animal_data = {
     "남생이": {
-        "desc": "한국 전역의 깨끗한 강과 저수지에서 서식. 물가의 모래나 자갈에 알을 낳으며, 수질 오염과 서식지 파괴로 개체수가 줄고 있음.",
-        "animal_img": "https://upload.wikimedia.org/wikipedia/commons/3/37/Mauremys_reevesii_02.JPG",
-        "habitat_img": "https://cdn.pixabay.com/photo/2017/02/06/20/14/river-2046517_1280.jpg"
+        "desc": "한국과 동아시아의 담수에서 서식하는 반수생 거북. 수질 오염과 경쟁종으로 인해 개체수가 줄어들고 있습니다.",
+        "animal_img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Chinese_Pond_Turtle_%28Mauremys_reevesii%29.jpg",
+        "habitat_img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Restored_Cheonggyecheon_in_Seoul.jpg"
     },
     "반달가슴곰": {
-        "desc": "한국 설악산, 지리산 등 산림 지역에 서식. 주로 도토리, 열매, 곤충을 먹으며 산림 훼손과 밀렵으로 개체수가 적음.",
+        "desc": "한국 지리산과 설악산 등에 서식. 가슴의 흰색 반달 무늬가 특징이며, 산림 훼손과 밀렵으로 개체수가 위협받고 있습니다.",
         "animal_img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Ursus_thibetanus_in_Hiroshima.jpg",
         "habitat_img": "https://cdn.pixabay.com/photo/2017/09/26/18/39/mountains-2798288_1280.jpg"
     },
     "수달": {
-        "desc": "한반도 전역의 강, 하천, 호수 주변에서 발견. 물고기와 갑각류를 먹으며, 깨끗한 수계가 필수적이어서 수질 오염에 취약.",
+        "desc": "한반도 강, 하천, 호수에 서식. 깨끗한 물을 필요로 하며, 어류와 갑각류를 먹습니다. 수질 오염이 큰 위협 요소입니다.",
         "animal_img": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Otter_on_Grass.jpg",
         "habitat_img": "https://cdn.pixabay.com/photo/2017/08/03/21/48/lake-2572703_1280.jpg"
     },
     "저어새": {
-        "desc": "한국의 서해안 갯벌과 무인도에서 번식. 부리 끝이 숟가락 모양으로 생겨 '저어새'라 불리며, 갯벌 파괴가 큰 위협.",
+        "desc": "한국 서해안 갯벌과 무인도에서 번식. 긴 부리 끝이 숟가락처럼 생긴 것이 특징입니다. 갯벌 파괴가 주요 위협입니다.",
         "animal_img": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Black-faced_Spoonbill_in_Korea.jpg",
         "habitat_img": "https://cdn.pixabay.com/photo/2017/03/27/14/58/wadden-sea-2170109_1280.jpg"
     },
     "자이언트 판다": {
-        "desc": "중국 쓰촨성, 간쑤성의 대나무 숲에 서식. 대나무를 주식으로 하며, 서식지 파괴와 낮은 번식률로 멸종위기종으로 분류됨.",
+        "desc": "중국 쓰촨성의 대나무 숲에 서식. 대나무가 주식이며 낮은 번식률과 서식지 감소로 멸종위기종입니다.",
         "animal_img": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG",
         "habitat_img": "https://cdn.pixabay.com/photo/2016/11/18/17/46/china-1833478_1280.jpg"
     },
     "바다거북": {
-        "desc": "열대 및 아열대 해양에 서식. 산란을 위해 해변으로 올라오며, 해안 개발과 해양 오염, 어업 활동으로 개체수가 줄고 있음.",
+        "desc": "열대 및 아열대 해양에 서식. 산란을 위해 모래사장을 찾으며, 해양 쓰레기와 어업 활동으로 위협받습니다.",
         "animal_img": "https://upload.wikimedia.org/wikipedia/commons/9/97/Sea_turtle.jpg",
         "habitat_img": "https://cdn.pixabay.com/photo/2015/07/17/10/44/turtle-849816_1280.jpg"
-    },
-    "호랑이": {
-        "desc": "인도, 러시아 연해주, 동남아시아 열대우림 등에 서식. 최상위 포식자로서 생태계 균형 유지에 중요한 역할을 하지만 밀렵과 서식지 파괴로 심각한 위협을 받고 있음.",
-        "animal_img": "https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg",
-        "habitat_img": "https://cdn.pixabay.com/photo/2016/11/29/05/08/jungle-1865639_1280.jpg"
-    },
-    "아시아 코끼리": {
-        "desc": "인도, 스리랑카, 동남아시아 열대우림과 초원에 서식. 서식지 파괴와 상아 밀렵으로 개체수가 급격히 감소하고 있음.",
-        "animal_img": "https://upload.wikimedia.org/wikipedia/commons/3/37/Asian_Elephant%2C_Kaziranga%2C_India.jpg",
-        "habitat_img": "https://cdn.pixabay.com/photo/2016/11/18/17/47/jungle-1833480_1280.jpg"
-    },
-    "고래상어": {
-        "desc": "열대와 아열대 해역에 서식하는 세계에서 가장 큰 물고기. 플랑크톤을 주식으로 하며, 남획과 해양 오염으로 위협받고 있음.",
-        "animal_img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Whale_shark_Georgia_aquarium.jpg",
-        "habitat_img": "https://cdn.pixabay.com/photo/2017/02/01/10/29/ocean-2024659_1280.jpg"
     }
 }
 
@@ -61,6 +46,9 @@ selected_animal = st.selectbox("동물을 선택하세요:", list(animal_data.ke
 st.subheader(f"🐾 {selected_animal}")
 st.write(animal_data[selected_animal]["desc"])
 
+# 동물 사진
 st.image(animal_data[selected_animal]["animal_img"], caption=f"{selected_animal} 사진", use_column_width=True)
+
+# 서식지 사진
 st.image(animal_data[selected_animal]["habitat_img"], caption=f"{selected_animal} 서식지", use_column_width=True)
 
