@@ -1,77 +1,39 @@
 import streamlit as st
-from pathlib import Path
 
-# 이미지 폴더 경로
-img_path = Path("images")
+st.title("🐾 MBTI 동물 성격 테스트")
+st.write("당신의 MBTI에 따라 어울리는 동물을 찾아드립니다!")
 
-# 멸종위기 동물 데이터 (로컬 이미지 사용)
-animal_data = {
-    "남생이": {
-        "desc": "한국과 동아시아의 담수에서 서식하는 반수생 거북. 수질 오염과 경쟁종으로 인해 개체수가 줄고 있습니다.",
-        "animal_img": img_path / "namsaengi.jpg",
-        "habitat_img": img_path / "river.jpg"
-    },
-    "반달가슴곰": {
-        "desc": "한국 지리산과 설악산 등에 서식. 가슴의 흰색 반달 무늬가 특징이며, 산림 훼손과 밀렵으로 개체수가 위협받고 있습니다.",
-        "animal_img": img_path / "bandal_bear.jpg",
-        "habitat_img": img_path / "mountain_forest.jpg"
-    },
-    "수달": {
-        "desc": "한반도 강, 하천, 호수에 서식. 깨끗한 물을 필요로 하며, 어류와 갑각류를 먹습니다. 수질 오염이 큰 위협 요소입니다.",
-        "animal_img": img_path / "otter.jpg",
-        "habitat_img": img_path / "lake.jpg"
-    },
-    "저어새": {
-        "desc": "한국 서해안 갯벌과 무인도에서 번식. 긴 부리 끝이 숟가락처럼 생긴 것이 특징입니다. 갯벌 파괴가 주요 위협입니다.",
-        "animal_img": img_path / "spoonbill.jpg",
-        "habitat_img": img_path / "mudflat.jpg"
-    },
-    "자이언트 판다": {
-        "desc": "중국 쓰촨성의 대나무 숲에 서식. 대나무가 주식이며 낮은 번식률과 서식지 감소로 멸종위기종입니다.",
-        "animal_img": img_path / "panda.jpg",
-        "habitat_img": img_path / "bamboo_forest.jpg"
-    },
-    "바다거북": {
-        "desc": "열대 및 아열대 해양에 서식. 산란을 위해 모래사장을 찾으며, 해양 쓰레기와 어업 활동으로 위협받습니다.",
-        "animal_img": img_path / "sea_turtle.jpg",
-        "habitat_img": img_path / "ocean.jpg"
-    },
-    "호랑이": {
-        "desc": "인도, 러시아 연해주, 동남아시아 열대우림 등에 서식. 밀렵과 서식지 파괴로 위협받고 있습니다.",
-        "animal_img": img_path / "tiger.jpg",
-        "habitat_img": img_path / "jungle.jpg"
-    },
-    "아시아 코끼리": {
-        "desc": "인도, 스리랑카, 동남아시아 열대우림과 초원에 서식. 서식지 파괴와 상아 밀렵으로 개체수가 감소하고 있습니다.",
-        "animal_img": img_path / "elephant.jpg",
-        "habitat_img": img_path / "savanna.jpg"
-    },
-    "고래상어": {
-        "desc": "열대와 아열대 해역에 서식하는 세계에서 가장 큰 물고기. 플랑크톤을 먹으며, 남획과 해양 오염으로 위협받습니다.",
-        "animal_img": img_path / "whale_shark.jpg",
-        "habitat_img": img_path / "ocean.jpg"
-    },
-    "장수하늘소": {
-        "desc": "한국의 활엽수림, 특히 오래된 참나무 숲에서 발견. 산림 파괴로 개체수가 급감하고 있습니다.",
-        "animal_img": img_path / "longhorn_beetle.jpg",
-        "habitat_img": img_path / "forest.jpg"
-    }
+# MBTI 선택
+mbti = st.selectbox(
+    "당신의 MBTI를 선택하세요:",
+    ["ISTJ", "ISFJ", "INFJ", "INTJ",
+     "ISTP", "ISFP", "INFP", "INTP",
+     "ESTP", "ESFP", "ENFP", "ENTP",
+     "ESTJ", "ESFJ", "ENFJ", "ENTJ"]
+)
+
+# MBTI별 동물 매칭 + 이유
+animal_dict = {
+    "ISTJ": ("🐢 거북이", "차분하고 책임감이 강하며, 꾸준히 목표를 향해 나아가는 모습이 거북이와 닮았습니다."),
+    "ISFJ": ("🐰 토끼", "따뜻하고 배려심이 많아 주변 사람들에게 편안함을 주는 점이 토끼와 어울립니다."),
+    "INFJ": ("🦉 부엉이", "통찰력 있고 신비로운 분위기를 풍기며, 깊은 사색을 즐기는 성향이 부엉이를 닮았습니다."),
+    "INTJ": ("🐆 표범", "계획적이고 전략적인 사고로 목표를 향해 나아가는 모습이 표범과 비슷합니다."),
+    "ISTP": ("🐍 뱀", "침착하게 상황을 분석하고 필요할 때 빠르게 대응하는 모습이 뱀과 닮았습니다."),
+    "ISFP": ("🦋 나비", "자유롭고 감수성이 풍부하며 예술적인 성향이 나비와 잘 어울립니다."),
+    "INFP": ("🦄 유니콘", "이상적이고 순수하며, 세상에 대한 독창적인 시각을 가진 모습이 유니콘과 닮았습니다."),
+    "INTP": ("🐙 문어", "호기심 많고 창의적이며, 다양한 시각으로 문제를 해결하는 모습이 문어를 떠올리게 합니다."),
+    "ESTP": ("🐅 호랑이", "모험심이 강하고 활동적인 성격이 강인한 호랑이와 닮았습니다."),
+    "ESFP": ("🐬 돌고래", "사교적이고 즐거움을 추구하며, 주변을 행복하게 만드는 점이 돌고래와 어울립니다."),
+    "ENFP": ("🐿 다람쥐", "에너지 넘치고 창의적이며, 늘 활기차고 호기심 많은 모습이 다람쥐를 닮았습니다."),
+    "ENTP": ("🦊 여우", "재치 있고 도전적인 성격으로 새로운 아이디어를 탐구하는 모습이 여우와 잘 어울립니다."),
+    "ESTJ": ("🦁 사자", "리더십이 강하고 책임감 있게 무리를 이끄는 모습이 사자와 닮았습니다."),
+    "ESFJ": ("🐦 앵무새", "사람들과 잘 어울리고 소통을 즐기며, 활발한 모습이 앵무새를 떠올리게 합니다."),
+    "ENFJ": ("🐴 말", "열정적이고 사람들을 이끄는 성향이 자유롭게 달리는 말과 어울립니다."),
+    "ENTJ": ("🐲 용", "결단력 있고 카리스마 있는 리더십이 전설 속 용과 닮았습니다.")
 }
 
-# 웹앱 제목
-st.title("🌍 멸종위기 동물 서식지 탐색기")
-
-st.write("멸종위기 동물을 선택하면 해당 동물의 사진과 서식지를 확인할 수 있습니다.")
-
-# 동물 선택
-selected_animal = st.selectbox("동물을 선택하세요:", list(animal_data.keys()))
-
-# 정보 출력
-st.subheader(f"🐾 {selected_animal}")
-st.write(animal_data[selected_animal]["desc"])
-
-# 동물 사진
-st.image(animal_data[selected_animal]["animal_img"], caption=f"{selected_animal} 사진", use_container_width=True)
-
-# 서식지 사진
-st.image(animal_data[selected_animal]["habitat_img"], caption=f"{selected_animal} 서식지", use_container_width=True)
+if mbti:
+    animal, reason = animal_dict[mbti]
+    st.subheader("🔮 결과")
+    st.success(f"당신과 어울리는 동물은 {animal} 입니다!")
+    st.write(f"✨ 이유: {reason}")
