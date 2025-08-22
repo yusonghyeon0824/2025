@@ -1,0 +1,19 @@
+my_app/
+├─ app.py
+└─ images/
+   ├─ namsaengi.jpg
+   ├─ river.jpg
+   ├─ bandal_bear.jpg
+   ├─ mountain_forest.jpg
+   ├─ otter.jpg
+   ├─ lake.jpg
+   ├─ spoonbill.jpg
+   ├─ mudflat.jpg
+   ├─ panda.jpg
+   ├─ bamboo_forest.jpg
+   ├─ sea_turtle.jpg
+   ├─ ocean.jpg
+   ├─ tiger.jpg
+   ├─ jungle.jpg
+   ├─ elephant.jpg
+   ├─ savanna.jpg
