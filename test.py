@@ -10,25 +10,25 @@ habitats = {
     "열대우림": {
         "img": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Madidi_National_Park.jpg",
         "animals": [
-            {"name": "오랑우탄", "img": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Orangutan.jpg",
+            {"name": "오랑우탄", "img": "https://i.namu.wiki/i/KdaEX59KjJ0XLrGls34LeBPbHN-556HnwdLJLUS_jl1cm58UIRdwOM4pQ2yAkJardGAvmCX-Q2jaV8C8xZ4TMQ.webp",
              "desc": "열대우림에 서식하며, 서식지 파괴로 멸종 위기에 처해 있습니다."},
-            {"name": "재규어", "img": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Standing_jaguar.jpg",
+            {"name": "재규어", "img": "https://upload.wikimedia.org/wikipedia/commons/1/11/Jaguar_%28Panthera_onca_palustris%29_male_Three_Brothers_River_2_%28cropped%29.jpg",
              "desc": "남아메리카의 대표적 맹수로, 서식지 감소와 불법 사냥의 위협을 받고 있습니다."}
         ]
     },
     "사막": {
         "img": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sahara_Desert_-_Algeria.jpg",
         "animals": [
-            {"name": "아라비아 오릭스", "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Arabian_Oryx_Oman.jpg",
+            {"name": "아라비아 오릭스", "img": "https://i.namu.wiki/i/2Yl-D08YkWD_02K0yNPgJg0hOw9-CIoOa5_KTS4v8Qgo463hjg_ri_HVyrznMo4YZ3m0zZn0Vzgx1PRoYvwcqw.webp",
              "desc": "사막의 혹독한 환경에서 살아가는 영양으로, 과거 멸종 위기에서 복원되었습니다."},
-            {"name": "펜넥여우", "img": "https://upload.wikimedia.org/wikipedia/commons/7/79/Fennec_Fox.jpg",
+            {"name": "페넥여우", "img": "https://pimg.mk.co.kr/meet/neds/2015/01/image_readtop_2015_71113_14218941471733860.jpg",
              "desc": "큰 귀가 특징인 사막 여우로, 불법 애완동물 거래로 위협받고 있습니다."}
         ]
     },
     "바다": {
         "img": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Coral_reef_in_the_Red_Sea.jpg",
         "animals": [
-            {"name": "바다거북", "img": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Green_turtle_swimming_over_coral_reefs_in_Kona.jpg",
+            {"name": "바다거북", "img": "https://waterstone.kr/data/file/challenge_list/832805294_0sBvzDnm_5e7248eca58031c67fa0ee7820a7a5dc8ef402b2.png",
              "desc": "산란지 파괴와 해양 오염으로 인해 개체 수가 급감하고 있습니다."},
             {"name": "범고래", "img": "https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg",
              "desc": "최상위 포식자로 해양 생태계에서 중요한 역할을 하지만, 오염과 먹이 부족으로 위협받고 있습니다."}
@@ -39,7 +39,7 @@ habitats = {
         "animals": [
             {"name": "북극곰", "img": "https://cdn.imweb.me/upload/S2022083177899bd6d2f9d/14a602c979130cc15cf463fe2d760c26e11ab6a2.jpeg",
              "desc": "빙하가 녹으면서 서식지가 줄어드는 대표적 기후 위기 피해 동물입니다."},
-            {"name": "황제펭귄", "img": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emperor_Penguin_Manchot_empereur.jpg",
+            {"name": "황제펭귄", "img": "https://cdn.eyesmag.com/content/uploads/posts/2023/08/25/3-bd95218b-703e-4fb0-a3f7-d5922b596363.jpg",
              "desc": "남극에 서식하며, 기후 변화로 인한 번식지 감소가 큰 위협이 되고 있습니다."}
         ]
     }
