@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="멸종위기종 탐험", layout="wide")
 
-st.title("🌍 멸종위기종 탐험 앱")
+st.title("🌍 멸종위기종을 만나러 가보자!!!")
 st.write("서식지 사진을 클릭하면 그곳에 사는 멸종위기 동물들을 확인할 수 있어요!")
 
 # 서식지와 동물 데이터
