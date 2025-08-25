@@ -8,7 +8,7 @@ st.write("서식지 사진을 클릭하면 그곳에 사는 멸종위기 동물�
 # 서식지와 동물 데이터
 habitats = {
     "열대우림": {
-        "img": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Madidi_National_Park.jpg",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgtkurLA8MhD6LOTsvZqTYqUI2WA7OZe5iCg&s",
         "animals": [
             {"name": "오랑우탄", "img": "https://i.namu.wiki/i/KdaEX59KjJ0XLrGls34LeBPbHN-556HnwdLJLUS_jl1cm58UIRdwOM4pQ2yAkJardGAvmCX-Q2jaV8C8xZ4TMQ.webp",
              "desc": "열대우림에 서식하며, 서식지 파괴로 멸종 위기에 처해 있습니다."},
@@ -17,7 +17,7 @@ habitats = {
         ]
     },
     "사막": {
-        "img": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sahara_Desert_-_Algeria.jpg",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Libya_5230_Wan_Caza_Dunes_Luca_Galuzzi_2007.jpg",
         "animals": [
             {"name": "아라비아 오릭스", "img": "https://i.namu.wiki/i/2Yl-D08YkWD_02K0yNPgJg0hOw9-CIoOa5_KTS4v8Qgo463hjg_ri_HVyrznMo4YZ3m0zZn0Vzgx1PRoYvwcqw.webp",
              "desc": "사막의 혹독한 환경에서 살아가는 영양으로, 과거 멸종 위기에서 복원되었습니다."},
@@ -26,7 +26,7 @@ habitats = {
         ]
     },
     "바다": {
-        "img": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Coral_reef_in_the_Red_Sea.jpg",
+        "img": "https://m.health.chosun.com/site/data/img_dir/2023/05/31/2023053102582_0.jpg",
         "animals": [
             {"name": "바다거북", "img": "https://waterstone.kr/data/file/challenge_list/832805294_0sBvzDnm_5e7248eca58031c67fa0ee7820a7a5dc8ef402b2.png",
              "desc": "산란지 파괴와 해양 오염으로 인해 개체 수가 급감하고 있습니다."},
@@ -35,7 +35,7 @@ habitats = {
         ]
     },
     "극지방": {
-        "img": "https://upload.wikimedia.org/wikipedia/commons/4/44/Arctic_Ocean_-_north_pole.jpg",
+        "img": "https://img.freepik.com/free-photo/icebergs-glacier-lagoon-iceland_1232-4683.jpg?semt=ais_hybrid&w=740&q=80",
         "animals": [
             {"name": "북극곰", "img": "https://cdn.imweb.me/upload/S2022083177899bd6d2f9d/14a602c979130cc15cf463fe2d760c26e11ab6a2.jpeg",
              "desc": "빙하가 녹으면서 서식지가 줄어드는 대표적 기후 위기 피해 동물입니다."},
