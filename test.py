@@ -1,39 +1,36 @@
 import streamlit as st
 
-st.title("🐾 MBTI 동물 성격 테스트")
-st.write("당신의 MBTI에 따라 어울리는 동물을 찾아드립니다!")
+st.title("🌍 멸종위기종 탐험 앱")
+st.write("서식지를 선택하면 그곳에 사는 멸종위기 동물들을 확인할 수 있어요.")
 
-# MBTI 선택
-mbti = st.selectbox(
-    "당신의 MBTI를 선택하세요:",
-    ["ISTJ", "ISFJ", "INFJ", "INTJ",
-     "ISTP", "ISFP", "INFP", "INTP",
-     "ESTP", "ESFP", "ENFP", "ENTP",
-     "ESTJ", "ESFJ", "ENFJ", "ENTJ"]
-)
-
-# MBTI별 동물 매칭 + 이유
-animal_dict = {
-    "ISTJ": ("🐢 거북이", "차분하고 책임감이 강하며, 꾸준히 목표를 향해 나아가는 모습이 거북이와 닮았습니다."),
-    "ISFJ": ("🐰 토끼", "따뜻하고 배려심이 많아 주변 사람들에게 편안함을 주는 점이 토끼와 어울립니다."),
-    "INFJ": ("🦉 부엉이", "통찰력 있고 신비로운 분위기를 풍기며, 깊은 사색을 즐기는 성향이 부엉이를 닮았습니다."),
-    "INTJ": ("🐆 표범", "계획적이고 전략적인 사고로 목표를 향해 나아가는 모습이 표범과 비슷합니다."),
-    "ISTP": ("🐍 뱀", "침착하게 상황을 분석하고 필요할 때 빠르게 대응하는 모습이 뱀과 닮았습니다."),
-    "ISFP": ("🦋 나비", "자유롭고 감수성이 풍부하며 예술적인 성향이 나비와 잘 어울립니다."),
-    "INFP": ("🦄 유니콘", "이상적이고 순수하며, 세상에 대한 독창적인 시각을 가진 모습이 유니콘과 닮았습니다."),
-    "INTP": ("🐙 문어", "호기심 많고 창의적이며, 다양한 시각으로 문제를 해결하는 모습이 문어를 떠올리게 합니다."),
-    "ESTP": ("🐅 호랑이", "모험심이 강하고 활동적인 성격이 강인한 호랑이와 닮았습니다."),
-    "ESFP": ("🐬 돌고래", "사교적이고 즐거움을 추구하며, 주변을 행복하게 만드는 점이 돌고래와 어울립니다."),
-    "ENFP": ("🐿 다람쥐", "에너지 넘치고 창의적이며, 늘 활기차고 호기심 많은 모습이 다람쥐를 닮았습니다."),
-    "ENTP": ("🦊 여우", "재치 있고 도전적인 성격으로 새로운 아이디어를 탐구하는 모습이 여우와 잘 어울립니다."),
-    "ESTJ": ("🦁 사자", "리더십이 강하고 책임감 있게 무리를 이끄는 모습이 사자와 닮았습니다."),
-    "ESFJ": ("🐦 앵무새", "사람들과 잘 어울리고 소통을 즐기며, 활발한 모습이 앵무새를 떠올리게 합니다."),
-    "ENFJ": ("🐴 말", "열정적이고 사람들을 이끄는 성향이 자유롭게 달리는 말과 어울립니다."),
-    "ENTJ": ("🐲 용", "결단력 있고 카리스마 있는 리더십이 전설 속 용과 닮았습니다.")
+# 서식지와 동물 데이터
+habitats = {
+    "🌴 열대우림": [
+        {"name": "오랑우탄", "img": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Orangutan.jpg"},
+        {"name": "재규어", "img": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Standing_jaguar.jpg"},
+    ],
+    "🏜 사막": [
+        {"name": "아라비아 오릭스", "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Arabian_Oryx_Oman.jpg"},
+        {"name": "펜넥여우", "img": "https://upload.wikimedia.org/wikipedia/commons/7/79/Fennec_Fox.jpg"},
+    ],
+    "🌊 바다": [
+        {"name": "바다거북", "img": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Green_turtle_swimming_over_coral_reefs_in_Kona.jpg"},
+        {"name": "범고래", "img": "https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"},
+    ],
+    "❄️ 극지방": [
+        {"name": "북극곰", "img": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Polar_Bear_-_Alaska.jpg"},
+        {"name": "황제펭귄", "img": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emperor_Penguin_Manchot_empereur.jpg"},
+    ]
 }
 
-if mbti:
-    animal, reason = animal_dict[mbti]
-    st.subheader("🔮 결과")
-    st.success(f"당신과 어울리는 동물은 {animal} 입니다!")
-    st.write(f"✨ 이유: {reason}")
+# 선택박스
+choice = st.selectbox("서식지를 선택하세요:", list(habitats.keys()))
+
+# 선택한 서식지 동물 출력
+st.subheader(f"{choice}에 사는 멸종위기 동물들")
+animals = habitats[choice]
+
+for animal in animals:
+    st.write(f"**{animal['name']}**")
+    st.image(animal["img"], use_container_width=True)
+    st.markdown("---")
