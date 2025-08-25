@@ -37,7 +37,7 @@ habitats = {
     "극지방": {
         "img": "https://upload.wikimedia.org/wikipedia/commons/4/44/Arctic_Ocean_-_north_pole.jpg",
         "animals": [
-            {"name": "북극곰", "img": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Polar_Bear_-_Alaska.jpg",
+            {"name": "북극곰", "img": "https://cdn.imweb.me/upload/S2022083177899bd6d2f9d/14a602c979130cc15cf463fe2d760c26e11ab6a2.jpeg",
              "desc": "빙하가 녹으면서 서식지가 줄어드는 대표적 기후 위기 피해 동물입니다."},
             {"name": "황제펭귄", "img": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emperor_Penguin_Manchot_empereur.jpg",
              "desc": "남극에 서식하며, 기후 변화로 인한 번식지 감소가 큰 위협이 되고 있습니다."}
